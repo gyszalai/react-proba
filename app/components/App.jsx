@@ -6,13 +6,12 @@ export default class App extends React.Component {
   render() {
     return (
         <div>
-            <Note valami="HUTYUTYU" />
+            <Note
+                text="Ez itt egy megjegyzés"
+                myEnum='A' 
+            />
             <Counter/>
         </div>
     );
   }
 };
-
-App.propTypes = {
-  valami: React.PropTypes.string
-}
