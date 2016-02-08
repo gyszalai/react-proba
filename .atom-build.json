@@ -1,0 +1,8 @@
+{
+  "cmd": "npm run build-client",
+  "name": "npm run build-client",
+  "sh": true,
+  "errorMatch": [
+      "ERROR"
+  ]
+}
