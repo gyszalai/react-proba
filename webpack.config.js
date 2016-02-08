@@ -15,20 +15,22 @@ module.exports = {
     },
 
     module: {
-        // preLoaders: [
-        //     {
-        //         test: /(\.js$|\.jsx$)/,
-        //         exclude: /node_modules/,
-        //         loader: "eslint-loader"
-        //     }
-        // ],
+        preLoaders: [
+            {
+                test: /(\.js$|\.jsx$)/,
+                exclude: /node_modules/,
+                loader: "eslint-loader"
+            }
+        ],
         loaders: [
             {
                 test: /\.jsx?$/,
-                // Enable caching for improved performance during development
-                // It uses default OS directory by default. If you need something
-                // more custom, pass a path to it. I.e., babel?cacheDirectory=<path>
-                loaders: ['babel?cacheDirectory'],
+                loader: 'babel',
+                exclude: /node_modules/,
+                query: {
+                    cacheDirectory: true,
+                    presets: ['react', 'es2015', 'stage-0']
+                },
                 include: PATHS.app
             }
         ]
